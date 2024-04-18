@@ -5,10 +5,10 @@ app = Flask(__name__)
 @app.route('/<ratings>', methods =["GET", "POST"])
 def save(ratings):
     if request.method == "POST":
-        file = open('test.txt', 'w')
+        file = open('ratings.txt', 'w')
         file.writelines(ratings)
         file.close()
         return 'done'
     if request.method == "GET":
-        file = open('test.txt', 'r')
+        file = open('ratings.txt', 'r')
         return file.readlines()
